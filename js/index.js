@@ -1,1418 +1,563 @@
-$(function () {
-    echart_1();
-    echart_2();
+﻿// index.js
 
-    echart_3();
-    echart_4();
 
-    echart_map();
-    echart_5();
+$(function(){
 
-    //echart_1湖南货物收入
-    function echart_1() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chart_1'));
-        option = {
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c}万元"
-            },
-            legend: {
-                x: 'center',
-                y: '15%',
-                data: [ '张家口', '承德', '衡水','邢台', '邯郸', '保定','秦皇岛','石家庄', '唐山'],
-                icon: 'circle',
-                textStyle: {
-                    color: '#fff',
-                }
-            },
-            calculable: true,
-            series: [{
-                name: '',
-                type: 'pie',
-                //起始角度，支持范围[0, 360]
-                startAngle: 0,
-                //饼图的半径，数组的第一项是内半径，第二项是外半径
-                radius: [41, 100.75],
-                //支持设置成百分比，设置成百分比时第一项是相对于容器宽度，第二项是相对于容器高度
-                center: ['50%', '40%'],
-                //是否展示成南丁格尔图，通过半径区分数据大小。可选择两种模式：
-                // 'radius' 面积展现数据的百分比，半径展现数据的大小。
-                //  'area' 所有扇区面积相同，仅通过半径展现数据大小
-                roseType: 'area',
-                //是否启用防止标签重叠策略，默认开启，圆环图这个例子中需要强制所有标签放在中心位置，可以将该值设为 false。
-                avoidLabelOverlap: false,
-                label: {
-                    normal: {
-                        show: true,
-                        formatter: '{c}万元'
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                labelLine: {
-                    normal: {
-                        show: true,
-                        length2: 1,
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                data: [{
-                        value: 900.58,
-                        name: '张家口',
-                        itemStyle: {
-                            normal: {
-                                color: '#f845f1'
-                            }
-                        }
-                    },
-                    {
-                        value: 1100.58,
-                        name: '承德',
-                        itemStyle: {
-                            normal: {
-                                color: '#ad46f3'
-                            }
-                        }
-                    },
-                    {
-                        value: 1200.58,
-                        name: '衡水',
-                        itemStyle: {
-                            normal: {
-                                color: '#5045f6'
-                            }
-                        }
-                    },
-                    {
-                        value: 1300.58,
-                        name: '邢台',
-                        itemStyle: {
-                            normal: {
-                                color: '#4777f5'
-                            }
-                        }
-                    },
-                    {
-                        value: 1400.58,
-                        name: '邯郸',
-                        itemStyle: {
-                            normal: {
-                                color: '#44aff0'
-                            }
-                        }
-                    },
-                    {
-                        value: 1500.58,
-                        name: '保定',
-                        itemStyle: {
-                            normal: {
-                                color: '#45dbf7'
-                            }
-                        }
-                    },
-                    {
-                        value: 1500.58,
-                        name: '秦皇岛',
-                        itemStyle: {
-                            normal: {
-                                color: '#f6d54a'
-                            }
-                        }
-                    },
-                    {
-                        value: 1600.58,
-                        name: '石家庄',
-                        itemStyle: {
-                            normal: {
-                                color: '#f69846'
-                            }
-                        }
-                    },
-                    {
-                        value: 1800,
-                        name: '唐山',
-                        itemStyle: {
-                            normal: {
-                                color: '#ff4343'
-                            }
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    }
-                ]
-            }]
-        };
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
-    }
 
-    //echart_2湖南省地图
-    function echart_2() {
-           // 基于准备好的dom，初始化echarts实例
-           var myChart = echarts.init(document.getElementById('chart_2'));
-           function showProvince() {
-                   myChart.setOption(option = {
-                       // backgroundColor: '#ffffff',
-                       visualMap: {
-                           show: false,
-                           min: 0,
-                           max: 100,
-                           left: 'left',
-                           top: 'bottom',
-                           text: ['高', '低'], // 文本，默认为数值文本
-                           calculable: true,
-                           inRange: {
-                               color: ['yellow', 'lightskyblue', 'orangered']
-                           }
-                       },
-                       series: [{
-                           type: 'map',
-                           mapType: 'hunan',
-                           roam: true,
-                           label: {
-                               normal: {
-                                   show: true
-                               },
-                               emphasis: {
-                                   textStyle: {
-                                       color: '#fff'
-                                   }
-                               }
-                           },
-                           itemStyle: {
-                               normal: {
-                                   borderColor: '#389BB7',
-                                   areaColor: '#fff',
-                               },
-                               emphasis: {
-                                   areaColor: '#389BB7',
-                                   borderWidth: 0
-                               }
-                           },
-                           animation: false,
-                           data: [{
-                               name: '长沙市',
-                               value:  100
-                           }, {
-                               name: '株洲市',
-                               value: 96
-                           }, {
-                               name: '湘潭市',
-                               value: 98
-                           }, {
-                               name: '衡阳市',
-                               value: 80
-                           }, {
-                               name: '邵阳市',
-                               value: 88
-                           }, {
-                               name: '岳阳市',
-                               value: 79
-                           }, {
-                               name: '常德市',
-                               value: 77,
-                           }, {
-                               name: '张家界市',
-                               value: 33
-                           }, {
-                               name: '益阳市',
-                               value: 69,
-                           }, {
-                               name: '郴州市',
-                               value: 66
-                           }, {
-                               name: '永州市',
-                               value: 22
-                           },{
-                                name: '娄底市',
-                                value: 51
-                           },{
-                                name: '湘西土家族苗族自治州',
-                                value: 44
-                           },{
-                                name: '怀化市',
-                                value: 9
-                           }]
-                       }]
-                   });
-           }
-   
-           var currentIdx = 0;
-           showProvince();
-           // 使用刚指定的配置项和数据显示图表。
-           window.addEventListener("resize", function () {
-               myChart.resize();
-           });
-    }
 
-    // echart_map中国地图
-    function echart_map() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chart_map'));
 
-        var mapName = 'china'
-        var data = []
-        var toolTipData = [];
+//一、user_login_box(用户登陆)------------------------------------------------------------------
 
-        /*获取地图数据*/
-        myChart.showLoading();
-        var mapFeatures = echarts.getMap(mapName).geoJson.features;
-        myChart.hideLoading();
-        var geoCoordMap = {
-            '福州': [119.4543, 25.9222],
-            '长春': [125.8154, 44.2584],
-            '重庆': [107.7539, 30.1904],
-            '西安': [109.1162, 34.2004],
-            '成都': [103.9526, 30.7617],
-            '常州': [119.4543, 31.5582],
-            '北京': [116.4551, 40.2539],
-            '北海': [109.314, 21.6211],
-            '海口': [110.3893, 19.8516],
-            '长沙': [113.019455,28.200103],
-            '上海': [121.40, 31.73],
-            '内蒙古': [106.82, 39.67]
-        };
+	$(document).click(function(){		//页面点击 隐藏
+		$(".user_login_box").hide();
+		$(".user_login").removeClass("btn_active");
+	})
+	 $(".user_login,.user_login_box").click(function(event){
+		event.stopPropagation();		//阻止默认事件
+	})
+	 $(".user_login").each(function(){
+		$(this).click(function(){
+			$(this).toggleClass("btn_active");
+			$(this).next().toggle();						//显示和隐藏 切换
+			$(this).parent().siblings().find(".user_login_box").hide();
+		})
+	})
 
-        var GZData = [
-            [{
-                name: '长沙'
-            }, {
-                name: '福州',
-                value: 95
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '长春',
-                value: 80
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '重庆',
-                value: 70
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '西安',
-                value: 60
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '成都',
-                value: 50
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '常州',
-                value: 40
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '北京',
-                value: 30
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '北海',
-                value: 20
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '海口',
-                value: 10
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '上海',
-                value: 80
-            }],
-            [{
-                name: '长沙'
-            }, {
-                name: '内蒙古',
-                value: 80
-            }]
-        ];
 
-        var convertData = function (data) {
-            var res = [];
-            for (var i = 0; i < data.length; i++) {
-                var dataItem = data[i];
-                var fromCoord = geoCoordMap[dataItem[0].name];
-                var toCoord = geoCoordMap[dataItem[1].name];
-                if (fromCoord && toCoord) {
-                    res.push({
-                        fromName: dataItem[0].name,
-                        toName: dataItem[1].name,
-                        coords: [fromCoord, toCoord]
-                    });
-                }
-            }
-            return res;
-        };
 
-        var color = ['#c5f80e'];
-        var series = [];
-        [
-            ['石家庄', GZData]
-        ].forEach(function (item, i) {
-            series.push({
-                name: item[0],
-                type: 'lines',
-                zlevel: 2,
-                symbol: ['none', 'arrow'],
-                symbolSize: 10,
-                effect: {
-                    show: true,
-                    period: 6,
-                    trailLength: 0,
-                    symbol: 'arrow',
-                    symbolSize: 5
-                },
-                lineStyle: {
-                    normal: {
-                        color: color[i],
-                        width: 1,
-                        opacity: 0.6,
-                        curveness: 0.2
-                    }
-                },
-                data: convertData(item[1])
-            }, {
-                name: item[0],
-                type: 'effectScatter',
-                coordinateSystem: 'geo',
-                zlevel: 2,
-                rippleEffect: {
-                    brushType: 'stroke'
-                },
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'right',
-                        formatter: '{b}'
-                    }
-                },
-                symbolSize: function (val) {
-                    return val[2] / 8;
-                },
-                itemStyle: {
-                    normal: {
-                        color: color[i]
-                    }
-                },
-                data: item[1].map(function (dataItem) {
-                    return {
-                        name: dataItem[1].name,
-                        value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
-                    };
-                })
-            });
-        });
 
-        option = {
-            tooltip: {
-                trigger: 'item'
-            },
-            geo: {
-                map: 'china',
-                label: {
-                    emphasis: {
-                        show: false
-                    }
-                },
-                roam: true,
-                itemStyle: {
-                    normal: {
-                        borderColor: 'rgba(147, 235, 248, 1)',
-                        borderWidth: 1,
-                        areaColor: {
-                            type: 'radial',
-                            x: 0.5,
-                            y: 0.5,
-                            r: 0.8,
-                            colorStops: [{
-                                offset: 0,
-                                color: 'rgba(175,238,238, 0)' // 0% 处的颜色
-                            }, {
-                                offset: 1,
-                                color: 'rgba(47,79,79, .1)' // 100% 处的颜色
-                            }],
-                            globalCoord: false // 缺省为 false
-                        },
-                        shadowColor: 'rgba(128, 217, 248, 1)',
-                        // shadowColor: 'rgba(255, 255, 255, 1)',
-                        shadowOffsetX: -2,
-                        shadowOffsetY: 2,
-                        shadowBlur: 10
-                    },
-                    emphasis: {
-                        areaColor: '#389BB7',
-                        borderWidth: 0
-                    }
-                }
-            },
-            series: series
-        };
+//主菜单--------------------------------------------------------------------------------------
+	
+	var index_1=0;				   //鼠标移入的序列号	
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
+	//鼠标移入主菜单----------------------------------------------
+	$("ul.navigation li a").hover(function(){
+		$("ul.navigation li a").removeClass("on");
+		$(this).addClass("on");
+		audioPlayer();	
+	},function(){
+		$("#audioPlayer")[0].pause();
+	});
 
-    }
+	$("ul.navigation li a").hover(function(){	//鼠标移入
+		index_1=$(this).parent().index();		
+		$(".sub_nav ul .sub_list p").eq(index_1).stop(true,true).show(600).siblings().hide();
+		audioPlayer();
+	},function(){
+		$("#audioPlayer")[0].pause();		
+	});
 
-    //echart_3货物周转量
-    function echart_3() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chart_3'));
-        myChart.clear();
-        option = {
-            title: {
-                text: ''
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data:['铁路货物','国家铁路货物','地方铁路货物','合资铁路货物','公路货物','水运货物'],
-                textStyle:{
-                    color: '#fff'
-                },
-                top: '8%'
-            },
-            grid: {
-                top: '40%',
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            color: ['#FF4949','#FFA74D','#FFEA51','#4BF0FF','#44AFF0','#4E82FF','#584BFF','#BE4DFF','#F845F1'],
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['2012年','2013年','2014年','2015年','2016年'],
-                splitLine: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#fff'
-                    }
-                }
-            },
-            yAxis: {
-                name: '亿吨公里',
-                type: 'value',
-                splitLine: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#fff'
-                    }
-                }
-            },
-            series: [
-                {
-                    name:'铁路货物',
-                    type:'line',
-                    data:[3961.88, 4233.63, 4183.14, 3633.01, 3704.47]
-                },
-                {
-                    name:'国家铁路货物',
-                    type:'line',
-                    data:[3374.76, 3364.76, 3274.76, 3371.82, 3259.87]
-                },
-                {
-                    name:'地方铁路货物',
-                    type:'line',
-                    data:[14.77, 15.17, 13.17, 14.56, 15.84]
-                },
-                {
-                    name:'合资铁路货物',
-                    type:'line',
-                    data:[686.17,847.26,895.22,865.28,886.72]
-                },
-                {
-                    name:'公路货物',
-                    type:'line',
-                    data:[6133.47, 6577.89, 7019.56,6821.48,7294.59]
-                },
-                {
-                    name:'水运货物',
-                    type:'line',
-                    data:[509.60, 862.54, 1481.77,1552.79,1333.62]
-                }
-            ]
-        };
-        myChart.setOption(option);
-    }
-    //湖南高速公路
-    function echart_4() {
-          // 基于准备好的dom，初始化echarts实例
-          var myChart = echarts.init(document.getElementById('chart_4'));
+	//hover音效
+	function audioPlayer(){
+		$("#audioPlayer").attr({"src":"/wp-content/uploads/2015/01/3.mp3"});
+		$("#audioPlayer")[0].play();	
+		$("#audioPlayer")[0].volume="0.5";	
+	};
+	
+	
 
-          myChart.setOption({
-              series: [{
-                  type: 'map',
-                  mapType: 'hunan'
-              }]
-          });
+	//主菜单解决bug-------------------------------------------
+	//解决 非火狐、非谷歌的兼容性      判断浏览器类型及版本号
+	$.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase()); 
+	$.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase()); 
+	$.browser.opera = /opera/.test(navigator.userAgent.toLowerCase()); 
+	$.browser.msie = /msie/.test(navigator.userAgent.toLowerCase()); 
+	
+	//判断是webkit且版本小于35.0的(360-7.1)   或者    是IE浏览器
+	if(($.browser.webkit&&parseFloat($.browser.version)<35)||$.browser.msie){
+		$("#main_nav li a").css({"transition":"none",background:"none","transform":"rotateX(0deg)"});
+		$("#main_nav li a").find("span:last-child").css({display:"none"});
+		$("#main_nav li a").click(function(){
+			$(this).css({background:"none","transform":"rotateX(0deg)"});
+		});
+		$("#main_nav li a").mouseover(function(){
+			$(this).css({background:"none","transform":"rotateX(0deg)"});
+		});
+	}//主菜单解决bug-------------------------------------------
+	
+	
 
-          var geoCoordMap = {
-              '怀化': [109.999867,27.518949],
-              '吉首': [109.741528,28.332629],
-              '张家界': [110.491722,29.112001],
-              '常德': [111.701486,29.076683],
-              '益阳': [112.348741,28.544124],
-              '岳阳': [113.126486,29.382401],
-              '长沙': [113.019455,28.200103],
-              '株洲': [113.163141,27.8418],
-              '湘潭': [112.91977,27.882141],
-              '邵阳': [111.467859,27.21915],
-              '娄底': [112.012438,27.745506],
-              '衡阳': [112.63809,26.895225],
-              '永州': [111.577632,26.460144],
-              '郴州': [113.039396,25.81497]
-          };
+//三、二级菜单，当滚动条滚到一定距离，让它相对浏览器定位(fixed)---------------------------------
+	if($(".sub_nav").length>0){					//获取二级菜单到顶部的距离
+		var navTop = $(".sub_nav").offset().top - $('.sub_nav').height()/5;
+		$(window).scroll(function(){
+			if ($(window).scrollTop() >= navTop) {
+				$(".sub_nav").addClass("fixed");
+				$(".sub_nav ul li a.smallogo").css({opacity:1});
+				/*$(".main_banner").css({background:"#112233"});#d1d6da*/  //轮播图背景
+			} else {
+				$(".sub_nav").removeClass("fixed");
+				$(".sub_nav ul li a.smallogo").css({opacity:0});
+				/*$(".main_banner").css({background:""});*/
+			}
+		});
+	}
+	
 
-          var goData = [
-              [{
-                  name: '张家界'
+//五、轮播图-------------------------------------------------------------------------------------
+	
+	var len=$(".main_banner li").length;
+	var index_2=0;
+	var timer=800;
+	var intervaltimer=0;
+	var isMoving=false;
+	
+	function slide(slideMode){//轮播方法		
+		if (isMoving==false){
+			isMoving=true;
+			var prev; var next; var hidden;
+			var curr=$("#imgCard"+index_2);//当前正中显示
+			
+			if(index_2==0){								//当前正中显示的是第0张时 prev为最后一张
+				prev=$("#imgCard"+(len-1));					
+			}else{												//否则  序列号-1
+				prev=$("#imgCard"+(index_2-1)); 		
+			}
+			if(index_2==(len-1)){					//当前正中显示的是最后一张时 next为第0张
+				next=$("#imgCard0");
+			}else{											//否则  序列号+1
+				next=$("#imgCard"+(index_2+1));
+			}
+	
+			if(slideMode){			//slideMode为1(true)，执行slide(1)，上一张
+				if(index_2-2>=0){									//index_2						2		3		4
+					hidden=$("#imgCard"+(index_2-2));//									0		1		2
+				}else{													//index_2		0		1
+					hidden=$("#imgCard"+(len+index_2-2));//			3		4
+				}
+				prev.css("z-index","5");			//点击prev按钮  让prev位置上的这张图片 层级最高 显示
+				next.css("z-index","1");
+				curr.css("z-index","2");			
+				hidden.css("z-index","1");
+				//当index_2自减，各图片往右运动效果
+				hidden.css({width:"450px",height:"180px",top:"60px","left":"0px","opacity":0});
+				hidden.stop(true,true).animate({width:"580px",height:"240px",top:"20px",left:"0px",opacity:1},timer);
+				curr.stop(true,true).animate({width:"580px",height:"240px",top:"20px",left:"600px",opacity:1},timer);
+				next.stop(true,true).animate({width:"450px",height:"180px",top:"60px","left":"730px","opacity":0},timer,function(){next.find("span").css("opacity",0); isMoving = false;});
+				//prev  -->  curr     prev中的图片li轮换到curr的位置      其他一次轮换
+				prev.find("span").css("opacity",0);
+				$(".main_banner_box li").find("p").css({"bottom":"-50px"});//所有标题隐藏
+				prev.stop(true,true).animate({width:"670px",height:"280px",left:"255px",top:0,opacity:1},timer,function(){
+					$(this).find("p").animate({"bottom":"0px"});	//当前这张图片的标题运动出来
+				});
+				index_2--;
+			}else{			//执行next 操作
+				if(index_2+2>=len){								//index_2								3		4	
+					hidden=$("#imgCard"+(index_2+2-len));//										0		1
+				}else{													//index_2		0		1		2
+					hidden=$("#imgCard"+(index_2+2));//						2		3		4
+				}
+				prev.css("z-index","1");
+				next.css("z-index","5");			//点击next按钮  让next位置上的这张图片 层级最高 显示
+				curr.css("z-index","2");
+				hidden.css("z-index","1");
+				//当index_2自增，各图片往左运动效果
+				hidden.css({width:"450px",height:"180px",top:"60px","left":"730px","opacity":0});
+				hidden.stop(true,true).animate({width:"580px",height:"240px",top:"20px",left:"600px",opacity:1},timer);							
+				curr.stop(true,true).animate({width:"580px",height:"240px",top:"20px",left:"0px",opacity:1},timer);
+				//next  -->  curr     next中的图片li轮换到curr的位置      其他一次轮换
+				next.find("span").css("opacity",0);
+				$(".main_banner_box li").find("p").css({"bottom":"-50px"});//所有标题隐藏
+				next.stop(true,true).animate({width:"670px",height:"280px",left:"255px",top:0,opacity:1},timer,function(){
+					$(this).find("p").animate({"bottom":"0px"});	//当前这张图片的标题运动出来
+				});
+				prev.stop(true,true).animate({width:"450px",height:"180px",left:"0px",top:"60px",opacity:0},timer,function(){
+					isMoving = false;
+				}); 
+				index_2++;	
+			}//if else
+	
+			hidden.find("span").css("opacity",0.5);
+			curr.find("span").css("opacity",0.5);
+	
+			if(index_2==len) index_2=0;
+			if(index_2<0) index_2=len+index_2;			//限制index_2的范围
+			$(".btn_list span").removeClass('curr').eq(index_2).addClass('curr');//给序列号按钮添加、移除样式
+		}
+	}//slide()
 
-              }, {
-                  id: 1,
-                  name: '常德',
-                  value: 86
-              }],
-              [{
-                  name: '吉首'
 
-              }, {
-                  id: 1,
-                  name: '常德',
-                  value: 86
-              }],
-              [{
-                  name: '常德'
+	if(len>3){
+		//序列号按钮 跳序切换 方法
+		$(".btn_list span").click(function(event){
+			
+			if (isMoving ) return;
+			var oIndex=$(this).index();
+	
+			if(oIndex==index_2) return;//点击按钮的序列号与当前图片的序列号一致，return
+			clearInterval(intervaltimer)
+			intervaltimer=null;
+	
+			var flag=false;
+			//当前显示图片的序列号  和  被点击按钮的序列号  间隔超过1且不是首尾两个的时候
+			if(Math.abs(index_2-oIndex)>1&&Math.abs(len-Math.abs(index_2-oIndex))!=1){
+				//统一样式
+				$(".main_banner_box li").css({width:"300px",height:"120px",left:"600px",top:"60px",opacity:0});
+				//如果当前的序列号   比    被点击按钮序列号     大     而且     不相邻、不是首尾  
+				if(index_2>oIndex&&len-Math.abs(index_2-oIndex)!=1){
+					flag=true;
+					index_2=oIndex+1;		//oIndex+1    通过slide()  运动回上一张    oIndex
+				}else{//比   小     而且     不相邻、不是首尾
+					index_2=oIndex-1;		//oIndex-1     通过slide()  运动到下一张    oIndex
+					if(index_2<0) index_2=len-1;
+				}
+			}else{//当前 比 被点击  大	且   相邻									//从0    跳到     4		要执行上一张方法
+				if((index_2>oIndex&&len-(index_2-oIndex)!=1)||(index_2<oIndex&&len+(index_2-oIndex)==1)){
+					flag=true;			//执行上一张
+				}
+			}
+			slide(flag);
+			intervaltimer=setInterval(slide,3000);//自动轮播
+			
+		});
+	
+		$(".main_banner_box li").on("mousemove",function(){
+			if($(this).css("width")=="670px"){//鼠标移入为当前正中显示的图片li，则清除定时器
+				clearInterval(intervaltimer);
+				intervaltimer=null;
+			}
+		}).on("mouseout",function(){//鼠标移除重新滚动
+				clearInterval(intervaltimer);
+				intervaltimer=null;
+				intervaltimer=setInterval(slide,3000);
+		});
+		
+		$(".js_pre").click(function(event){//上一张
+			if (isMoving ) return;
+			clearInterval(intervaltimer);
+			intervaltimer=null;
+			slide(1);
+			intervaltimer=setInterval(slide,3000);
+		});
+	
+		$(".js_next").click(function(event){//下一张
+			if (isMoving ) return;
+			clearInterval(intervaltimer);
+			intervaltimer=null;
+			slide();
+			intervaltimer=setInterval(slide,3000);        
+		});
+		
+		intervaltimer=setInterval(slide,3000);
+		
+	}else{
+		
+		$(".js_pre").hide();
+		$(".js_next").hide();
+		
+	}//if else
+	
 
-              }, {
-                  id: 1,
-                  name: '益阳',
-                  value: 70
-              }],
-              [{
-                  name: '益阳'
 
-              }, {
-                  id: 1,
-                  name: '长沙',
-                  value: 95
-              }],
-              [{
-                  name: '长沙'
+	
+//七、MV首播-----------------------------------------------------------------------------------
+	var index_3=0;					//MV首播按钮序列号
+	var index_33=0;				//首发MV按钮序列号（MV页面）
+	var index_333=0;				//热门MV按钮序列号（MV页面）
+	var cont_1=$(".index_mv_body .mvList");
+	var cont_2=$(".shoufa_mv_body .mvList");
+	var cont_3=$(".hot_mv_body .mvList");
+	
+	//MV首播 (首页)-------------------------------------
+	$(".index_mv_title ul li").click(function(){	//选项卡
+		index_3=$(this).index();
+		mvSlide($(this),index_3,cont_1);
+	});
+	
+	//首发MV (MV页面)--------------------------------
+	$(".shoufa_mv_title ul li").click(function(){	//选项卡
+		index_33=$(this).index();
+		mvSlide($(this),index_33,cont_2);
+	});
+	
+	//热门MV（MV页面）------------------------------------
+	$(".hot_mv_title ul li").click(function(){	//选项卡
+		index_333=$(this).index();
+		mvSlide($(this),index_333,cont_3);
+	});
+	
+	//封装MV列表切换效果，共用
+	function mvSlide(btn,n,cont){
+		btn.find("a").addClass("cur").parent().siblings().find("a").removeClass("cur");
+		cont.eq(n).fadeIn().siblings("div").fadeOut();	
+		cont.eq(n).addClass("curShow").siblings().removeClass("curShow");	
+	}
 
-              }, {
-                  id: 1,
-                  name: '岳阳',
-                  value: 70
-              }],
-              [{
-                  name: '长沙'
+	var iHtml = "<b></b>";
+	$(".index_mv_body .mvList ul.sb li").eq(0).append(iHtml);
+	$(".index_mv_body .mvList ul.sb li").eq(1).append(iHtml);
+	$(".shoufa_mv_body .mvList ul.sb li").eq(0).append(iHtml);
+	$(".shoufa_mv_body .mvList ul.sb li").eq(1).append(iHtml);
+	
 
-              }, {
-                  id: 1,
-                  name: '湘潭',
-                  value: 80
-              }],
-              [{
-                  name: '长沙'
 
-              }, {
-                  id: 1,
-                  name: '株洲',
-                  value: 80
-              }],
-              [{
-                  name: '长沙'
 
-              }, {
-                  id: 1,
-                  name: '衡阳',
-                  value: 80
-              }],
-              [{
-                  name: '衡阳'
+	//排行榜-----------------
 
-              }, {
-                  id: 1,
-                  name: '郴州',
-                  value: 70
-              }],
-              [{
-                  name: '衡阳'
+	// $("#rank li").eq(0).find("a.musicName").prepend("<i class='first_place'>1</i>");
+	// $("#rank li").eq(1).find("a.musicName").prepend("<i class='second_place'>2</i>");
+	// $("#rank li").eq(2).find("a.musicName").prepend("<i class='third_place'>3</i>");
+	for(var r=0;r<9;r++){
+		$("#rank li").eq(r).find("a.musicName").prepend(" " + (r + 1) + "  ");
+	}
+    for(var k=0;k<9;k++){
+		$("#latest li").eq(k).find("a.musicName").prepend(" " + (k + 1) + "  ");
+	}
+	for (var p=0;p<9;p++){
+		$("#popular li").eq(p).find("a.musicName").prepend(" " + (p + 1) + "  ");
+	}
 
-              }, {
-                  id: 1,
-                  name: '永州',
-                  value: 70
-              }],
-              [{
-                  name: '湘潭'
 
-              }, {
-                  id: 1,
-                  name: '娄底',
-                  value: 60
-              }],
-              [{
-                  name: '娄底'
+	
+//九、精选集-------------------------------------------------------------------------------
+	var oList_omnibus=document.getElementById("omnibus_list");
+	var oI=oList_omnibus.getElementsByTagName("i")[0];
+	var aSpan=oList_omnibus.getElementsByTagName("span");
+	$("#omnibus_list .post_big a").hover(function(){
+		$(this).find("i").stop(true,true).animate({left:"0px"},300);
+	},function(){
+		$(this).find("i").stop(true,true).animate({left:"305px"},300,function(){
+			oI.style.left="-305px";
+		});
+	});
+	$("#omnibus_list .post_small a").hover(function(){
+		$(this).find("span").stop(true,true).animate({left:"0px"},300);
+	},function(){
+		$(this).find("span").stop(true,true).animate({left:"130px"},300,function(){
+			for(var i=0; i<aSpan.length; i++){
+				aSpan[i].style.left="-130px";
+			}
+		});
+		
+	});
+	
+	
+	
+	
 
-              }, {
-                  id: 1,
-                  name: '邵阳',
-                  value: 75
-              }],
-              [{
-                  name: '邵阳'
+});//$(function(){});        window.onload
 
-              }, {
-                  id: 1,
-                  name: '怀化',
-                  value: 75
-              }],
-          ];
-          //值控制圆点大小
-          var backData = [
-              [{
-                  name: '常德'
 
-              }, {
-                  id: 1,
-                  name: '张家界',
-                  value: 80
-              }],
-              [{
-                  name: '常德'
 
-              }, {
-                  id: 1,
-                  name: '吉首',
-                  value: 66
-              }],
-              [{
-                  name: '益阳'
 
-              }, {
-                  id: 1,
-                  name: '常德',
-                  value: 86
-              }],
-              [{
-                  name: '长沙'
 
-              }, {
-                  id: 1,
-                  name: '益阳',
-                  value: 70
-              }],
-              [{
-                  name: '岳阳'
 
-              }, {
-                  id: 1,
-                  name: '长沙',
-                  value: 95
-              }],
-              [{
-                  name: '湘潭'
 
-              }, {
-                  id: 1,
-                  name: '长沙',
-                  value: 95
-              }],
-              [{
-                  name: '株洲'
+//十、回到顶部---------------------------------------------------------------------------
+	$("#toTop").click(function(){
+		$("html,body").animate({scrollTop: "0px"},"slow");
+		//点击音效
+		$("#audioPlayer").attr({"src":"/wp-content/uploads/2015/01/1.mp3"});
+		$("#audioPlayer")[0].play();
+	});
+	
+	//二维码
+	$(".footer_cont_right a.twoCode").hover(function(){
+			$(this).find("img.tCode").stop(true, true).fadeIn();
+		},function(){
+			$(this).find("img.tCode").stop(true, true).delay(800).fadeOut();
+	});
+	
+	
+	
+	
+// mv页.js
 
-              }, {
-                  id: 1,
-                  name: '长沙',
-                  value: 95
-              }],
-              [{
-                  name: '衡阳'
+//十一、MV页面 js-------------------------------------------------------------------------
+	
+	// $("#mv_rank_list ul li").hover(function(){
+	// 	$(this).css({"z-index":"6"}).stop(true,true).animate({"left":"-10px","opacity":"1"},350).siblings().css({"z-index":"1"}).stop(true,true).animate({"left":"0px","opacity":"0.5"},350);
+	// 	},function(){
+	// 	$("#mv_rank_list ul li").css({"z-index":"1"}).stop(true,true).animate({"left":"0px","opacity":"1"},350);
+	// });
 
-              }, {
-                  id: 1,
-                  name: '长沙',
-                  value: 95
-              }],
-              [{
-                  name: '郴州'
+	$("#mv_classify_list ul li").hover(function(){
+		$(this).stop(true,true).animate({"opacity":"1"},350).siblings().stop(true,true).animate({"opacity":"0.5"},350);
+		},function(){
+		$("#mv_classify_list ul li").stop(true,true).animate({"opacity":"1"},350);
+	});
+	
+	
+	$("#mvList .mv_rcmd").click(function(){
+		var index_mv_rcmd1=$(this).index();
+		$(this).find("span").addClass("active").parent().siblings("li").find("span").removeClass("active");
+		$(this).find("i").addClass("on").parent().siblings("li").find("i").removeClass("on");	
+	});
 
-              }, {
-                  id: 1,
-                  name: '衡阳',
-                  value: 80
-              }],
-              [{
-                  name: '永州'
 
-              }, {
-                  id: 1,
-                  name: '衡阳',
-                  value: 80
-              }],
-              [{
-                  name: '娄底'
 
-              }, {
-                  id: 1,
-                  name: '湘潭',
-                  value: 80
-              }],
-              [{
-                  name: '邵阳'
+//十二、MV视频播放器---------------------------------------------------------------------------------------------------
+	//数组 保存 MV.url
+	var arrSongs = ["http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+	"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+	"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"]
+	
+	//爱情大师 - 崔子格       匆匆那年 - 王菲        喜欢你 - 邓紫棋
+	$("#mvList li.mv_rcmd").click(function(){
+		var _index_songs=$(this).index();
+		video[0].src=arrSongs[_index_songs];
+		video[0].play();	
+		$(".playPause").css({"backgroundPosition":"-54px -10px"});
+	});
+	$("#mv_rank_list ul li").click(function(){
+		var index_mv_rcmd2=$(this).index();
+		video[0].src=arrSongs[index_mv_rcmd2];
+		video[0].play();
+		$(".playPause").css({"backgroundPosition":"-54px -10px"});
+	});
 
-              }, {
-                  id: 1,
-                  name: '娄底',
-                  value: 60
-              }],
-              [{
-                  name: '怀化'
 
-              }, {
-                  id: 1,
-                  name: '邵阳',
-                  value: 75
-              }],
-          ];
 
-          var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
-          var arcAngle = function(data) {
-              var j, k;
-              for (var i = 0; i < data.length; i++) {
-                  var dataItem = data[i];
-                  if (dataItem[1].id == 1) {
-                      j = 0.2;
-                      return j;
-                  } else if (dataItem[1].id == 2) {
-                      k = -0.2;
-                      return k;
-                  }
-              }
-          }
+	//MV视频播放器
+	var video=$("#video");
+	//video[0].volume="0.5";
+	//播放暂停
+	$(".playPause").click(function(){
+		if(video[0].paused){		//video 要带上 [0]
+			video[0].play();
+			$(this).css({"backgroundPosition":"-54px -10px"});
+		}else{
+			video[0].pause();
+			$(this).css({"backgroundPosition":"-12px -10px"});
+		}
+		return false;
+	});
+	
+	//获取总时长 与 获取当前播放时间
+	video.on("loadedmetadata",function(){
+		var dur=changeTime(video[0].duration);
+		$(".duration").text(dur);
+	});
+	video.on("timeupdate",function(){
+		var cur=changeTime(video[0].currentTime);
+		$(".current").text(cur);
 
-          var convertData = function(data) {
-              var res = [];
-              for (var i = 0; i < data.length; i++) {
-                  var dataItem = data[i];
-                  var fromCoord = geoCoordMap[dataItem[0].name];
-                  var toCoord = geoCoordMap[dataItem[1].name];
-                  if (dataItem[1].id == 1) {
-                      if (fromCoord && toCoord) {
-                          res.push([{
-                              coord: fromCoord,
-                          }, {
-                              coord: toCoord,
-                              value: dataItem[1].value //线条颜色
+		var cur_pos=video[0].currentTime; //当前播放时间
+		var dur_max=video[0].duration; //总时长，两者相除 求比例	
+		var scale=100*cur_pos/dur_max; 
+		$(".timeBar").css("width",scale+"%");
+	});
 
-                          }]);
-                      }
-                  } else if (dataItem[1].id == 2) {
-                      if (fromCoord && toCoord) {
-                          res.push([{
-                              coord: fromCoord,
-                          }, {
-                              coord: toCoord
-                          }]);
-                      }
-                  }
-              }
-              return res;
-          };
+	//把获取的时间(单位为毫秒) 转化成秒 方法
+	function changeTime(time){
+		iNum=parseInt(time);
+		var iM=toZero(Math.floor(time/60));
+		var iS=toZero(Math.floor(time%60));
+		return iM+":"+iS;
+	}
+	//补零
+	function toZero(num){
+		return num<=9?"0"+num:""+num;
+	}
 
-          var color = ['#fff', '#FF1493', '#0000FF'];
-          var series = [];
-          [
-              ['1', goData],
-              ['2', backData]
-          ].forEach(function(item, i) {
-              series.push({
-                  name: item[0],
-                  type: 'lines',
-                  zlevel: 2,
-                  symbol: ['arrow', 'arrow'],
-                  //线特效配置
-                  effect: {
-                      show: true,
-                      period: 6,
-                      trailLength: 0.1,
-                      symbol: 'arrow', //标记类型
-                      symbolSize: 5
-                  },
-                  lineStyle: {
-                      normal: {
-                          width: 1,
-                          opacity: 0.4,
-                          curveness: arcAngle(item[1]), //弧线角度
-                          color: '#fff'
-                      }
-                  },
-                  edgeLabel: {
-                      normal: {
-                          show: true,
-                          textStyle: {
-                              fontSize: 14
-                          },
-                          formatter: function(params) {
-                              var txt = '';
-                              if (params.data.speed !== undefined) {
-                                  txt = params.data.speed;
-                              }
-                              return txt;
-                          },
-                      }
-                  },
-                  data: convertData(item[1])
-              }, {
-                  type: 'effectScatter',
-                  coordinateSystem: 'geo',
-                  zlevel: 2,
-                  //波纹效果
-                  rippleEffect: {
-                      period: 2,
-                      brushType: 'stroke',
-                      scale: 3
-                  },
-                  label: {
-                      normal: {
-                          show: true,
-                          color: '#fff',
-                          position: 'right',
-                          formatter: '{b}'
-                      }
-                  },
-                  //终点形象
-                  symbol: 'circle',
-                  //圆点大小
-                  symbolSize: function(val) {
-                      return val[2] / 8;
-                  },
-                  itemStyle: {
-                      normal: {
-                          show: true
-                      }
-                  },
-                  data: item[1].map(function(dataItem) {
-                      return {
-                          name: dataItem[1].name,
-                          value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
-                      };
-                  })
+	//点击或拖动进度条
+	var timeDrag=false;   /* 拖动状态 */
+	$(".progressBar").mousedown(function(e){
+	   timeDrag=true;
+	   updatebar(e.pageX);
+	});
+	$(document).mouseup(function(e){
+	   if(timeDrag){
+		  timeDrag=false;
+		  updatebar(e.pageX);
+	   }
+	});
+	$(document).mousemove(function(e){
+	   if(timeDrag){
+		  updatebar(e.pageX);
+	   }
+	});
+	 
+	//进度条 操作
+	var updatebar=function(x){
+	var progress=$(".progressBar");
+	var maxduration=video[0].duration; //总时间
+	var position=x-progress.offset().left; //点击或拖动的位置
+	var percentage=100*position/progress.width();
 
-              });
+	//限制拖动范围
+	if(percentage>100){
+		percentage=100;
+	}
+	if(percentage<0){
+		percentage=0;
+	}
+ 
+	//拖动滚动条 currenttime 相应变化
+	$(".timeBar").css("width",percentage+"%");
+		video[0].currentTime=maxduration*percentage/100;
+	};
 
-          });
 
-          option = {
-              title: {
-                  text: '',
-                  subtext: '',
-                  left: 'center',
-                  textStyle: {
-                      color: '#fff'
-                  }
-              },
-              tooltip: {
-                  trigger: 'item',
-                  formatter: '{b}'
-              },
-              //线颜色及飞行轨道颜色
-              visualMap: {
-                  show: false,
-                  min: 0,
-                  max: 100,
-                  color: ['#31A031','#31A031']
-              },
-              //地图相关设置
-              geo: {
-                  map: 'hunan',
-                  //视角缩放比例
-                  zoom: 1,
-                  //显示文本样式
-                  label: {
-                      normal: {
-                          show: false,
-                          textStyle: {
-                              color: '#fff'
-                          }
-                      },
-                      emphasis: {
-                          textStyle: {
-                              color: '#fff'
-                          }
-                      }
-                  },
-                  //鼠标缩放和平移
-                  roam: true,
-                  itemStyle: {
-                      normal: {
-                          //          	color: '#ddd',
-                          borderColor: 'rgba(147, 235, 248, 1)',
-                          borderWidth: 1,
-                          areaColor: {
-                              type: 'radial',
-                              x: 0.5,
-                              y: 0.5,
-                              r: 0.8,
-                              colorStops: [{
-                                  offset: 0,
-                                  color: 'rgba(175,238,238, 0)' // 0% 处的颜色
-                              }, {
-                                  offset: 1,
-                                  color: 'rgba(	47,79,79, .2)' // 100% 处的颜色
-                              }],
-                              globalCoord: false // 缺省为 false
-                          },
-                          shadowColor: 'rgba(128, 217, 248, 1)',
-                          // shadowColor: 'rgba(255, 255, 255, 1)',
-                          shadowOffsetX: -2,
-                          shadowOffsetY: 2,
-                          shadowBlur: 10
-                      },
-                      emphasis: {
-                          areaColor: '#389BB7',
-                          borderWidth: 0
-                      }
-                  }
-              },
-              series: series
-          };
-          myChart.setOption(option);
+	//缓冲加载条
+	var startBuffer=function(){
+		var maxduration=video[0].duration;
+		var currentBuffer=video[0].buffered.end(0);
+		var percentage=100*currentBuffer/maxduration;
+		$(".bufferBar").css("width",percentage+"%");
 
-    }
-    //湖南省飞机场
-    function echart_5() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chart_5'));
+		if(currentBuffer<maxduration){
+			setTimeout(startBuffer,500);
+		}
+	};
+	setTimeout(startBuffer,500);
 
-        function showProvince() {
-                var geoCoordMap = {
-                    '长沙黄花国际机场': [113.226512,28.192929],
-                    '张家界荷花机场': [110.454598,29.107223],
-                    '常德桃花源机场': [111.651508,28.921516],
-                    '永州零陵机场': [111.622869,26.340994],
-                    '怀化芷江机场': [109.714784,27.44615],
-                };
-                var data = [{
-                        name: '长沙黄花国际机场',
-                        value: 100
-                    },
-                    {
-                        name: '张家界荷花机场',
-                        value: 100
-                    },
-                    {
-                        name: '常德桃花源机场',
-                        value: 100
-                    },
-                    {
-                        name: '永州零陵机场',
-                        value: 100
-                    },
-                    {
-                        name: '怀化芷江机场',
-                        value: 100
-                    }
-                ];
-                var max = 480,
-                    min = 9; // todo 
-                var maxSize4Pin = 100,
-                    minSize4Pin = 20;
-                var convertData = function (data) {
-                    var res = [];
-                    for (var i = 0; i < data.length; i++) {
-                        var geoCoord = geoCoordMap[data[i].name];
-                        if (geoCoord) {
-                            res.push({
-                                name: data[i].name,
-                                value: geoCoord.concat(data[i].value)
-                            });
-                        }
-                    }
-                    return res;
-                };
 
-                myChart.setOption(option = {
-                    title: {
-                        top: 20,
-                        text: '',
-                        subtext: '',
-                        x: 'center',
-                        textStyle: {
-                            color: '#ccc'
-                        }
-                    },
-                    legend: {
-                        orient: 'vertical',
-                        y: 'bottom',
-                        x: 'right',
-                        data: ['pm2.5'],
-                        textStyle: {
-                            color: '#fff'
-                        }
-                    },
-                    visualMap: {
-                        show: false,
-                        min: 0,
-                        max: 500,
-                        left: 'left',
-                        top: 'bottom',
-                        text: ['高', '低'], // 文本，默认为数值文本
-                        calculable: true,
-                        seriesIndex: [1],
-                        inRange: {
-                        }
-                    },
-                    geo: {
-                        show: true,
-                        map:'hunan',
-                        mapType: 'hunan',
-                        label: {
-                            normal: {
-                            },
-                            //鼠标移入后查看效果
-                            emphasis: {
-                                textStyle: {
-                                    color: '#fff'
-                                }
-                            }
-                        },
-                        //鼠标缩放和平移
-                        roam: true,
-                        itemStyle: {
-                            normal: {
-                                //          	color: '#ddd',
-                                borderColor: 'rgba(147, 235, 248, 1)',
-                                borderWidth: 1,
-                                areaColor: {
-                                    type: 'radial',
-                                    x: 0.5,
-                                    y: 0.5,
-                                    r: 0.8,
-                                    colorStops: [{
-                                        offset: 0,
-                                        color: 'rgba(175,238,238, 0)' // 0% 处的颜色
-                                    }, {
-                                        offset: 1,
-                                        color: 'rgba(	47,79,79, .2)' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                },
-                                shadowColor: 'rgba(128, 217, 248, 1)',
-                                shadowOffsetX: -2,
-                                shadowOffsetY: 2,
-                                shadowBlur: 10
-                            },
-                            emphasis: {
-                                areaColor: '#389BB7',
-                                borderWidth: 0
-                            }
-                        }
-                    },
-                    series: [{
-                            name: 'light',
-                            type: 'map',
-                            coordinateSystem: 'geo',
-                            data: convertData(data),
-                            itemStyle: {
-                                normal: {
-                                    color: '#F4E925'
-                                }
-                            }
-                        },
-                        {
-                            name: '点',
-                            type: 'scatter',
-                            coordinateSystem: 'geo',
-                            symbol: 'pin',
-                            symbolSize: function(val) {
-                                var a = (maxSize4Pin - minSize4Pin) / (max - min);
-                                var b = minSize4Pin - a * min;
-                                b = maxSize4Pin - a * max;
-                                return a * val[2] + b;
-                            },
-                            label: {
-                                normal: {
-                                    // show: true,
-                                    // textStyle: {
-                                    //     color: '#fff',
-                                    //     fontSize: 9,
-                                    // }
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#F62157', //标志颜色
-                                }
-                            },
-                            zlevel: 6,
-                            data: convertData(data),
-                        },
-                        {  
-                            name: 'light',
-                            type: 'map',
-                            mapType: 'hunan',
-                            geoIndex: 0,
-                            aspectScale: 0.75, //长宽比
-                            showLegendSymbol: false, // 存在legend时显示
-                            label: {
-                                normal: {
-                                    show: false
-                                },
-                                emphasis: {
-                                    show: false,
-                                    textStyle: {
-                                        color: '#fff'
-                                    }
-                                }
-                            },
-                            roam: true,
-                            itemStyle: {
-                                normal: {
-                                    areaColor: '#031525',
-                                    borderColor: '#FFFFFF',
-                                },
-                                emphasis: {
-                                    areaColor: '#2B91B7'
-                                }
-                            },
-                            animation: false,
-                            data: data
-                        },
-                        {
-                            name: ' ',
-                            type: 'effectScatter',
-                            coordinateSystem: 'geo',
-                            data: convertData(data.sort(function (a, b) {
-                                return b.value - a.value;
-                            }).slice(0, 5)),
-                            symbolSize: function (val) {
-                                return val[2] / 10;
-                            },
-                            showEffectOn: 'render',
-                            rippleEffect: {
-                                brushType: 'stroke'
-                            },
-                            hoverAnimation: true,
-                            label: {
-                                normal: {
-                                    formatter: '{b}',
-                                    position: 'right',
-                                    show: true
-                                }
-                            },
-                            itemStyle: {
-                                normal: {
-                                    color: '#05C3F9',
-                                    shadowBlur: 10,
-                                    shadowColor: '#05C3F9'
-                                }
-                            },
-                            zlevel: 1
-                        },
+	//静音按钮
+	$(".muted").click(function(){
+		if(video[0].muted){
+			$(this).css({"backgroundPosition":"-88px -10px"});
+			video[0].muted=false;
+		}else{
+			$(this).css({"backgroundPosition":"-126px -10px"});
+			video[0].muted=true;
+		}
+		return false;
+	});
 
-                    ]
-                });
-        }
-        showProvince();
+	//音量条 点击或拖动
+	var timeDrag2=false;   /* 拖动状态 */
+	$(".volumeBar").mousedown(function(e){
+		timeDrag2=true;
+		updatebar2(e.pageX);
+	});
+	$(document).mouseup(function(e){
+		if(timeDrag2){
+			timeDrag2=false;
+			updatebar2(e.pageX);
+		}
+	});
+	$(document).mousemove(function(e){
+		if(timeDrag2){
+			updatebar2(e.pageX);
+		}
+	});
+	 
+	//音量条 操作
+	var updatebar2=function(x){
+		var progress=$(".volumeBar");
+		var maxduration=video[0].duration; //总时间
+		var position=x-progress.offset().left; //点击或拖动的位置
+		var percentage=100*position/progress.width();
+	 
+		//限制范围
+		if(percentage>100){
+			percentage=100;
+		}
+		if(percentage<0){
+			percentage=0;
+		}
+	 
+	//拖动滚动条 currenttime 相应变化
+	$(".volume").css("width",percentage+"%");
+		video[0].volume=percentage/100;
+	};
 
-        // 使用刚指定的配置项和数据显示图表。
-        // myChart.setOption(option);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
-    }
-    //点击跳转
-    $('#chart_map').click(function(){
-        window.location.href = './page/index.html';
-    });
-    $('.t_btn2').click(function(){
-        window.location.href = "./page/index.html?id=2";
-    });
-    $('.t_btn3').click(function(){
-        window.location.href = "./page/index.html?id=3";
-    });
-    $('.t_btn4').click(function(){
-        window.location.href = "./page/index.html?id=4";
-    });
-    $('.t_btn5').click(function(){
-        window.location.href = "./page/index.html?id=5";
-    });
-    $('.t_btn6').click(function(){
-        window.location.href = "./page/index.html?id=6";
-    });
-    $('.t_btn7').click(function(){
-        window.location.href = "./page/index.html?id=7";
-    });
-    $('.t_btn8').click(function(){
-        window.location.href = "./page/index.html?id=8";
-    });
-    $('.t_btn9').click(function(){
-        window.location.href = "./page/index.html?id=9";
-    });
-});
+	//全屏
+	$(".fullscreen").on("click",function(){
+		//兼容写法
+		video[0].RequestFullScreen=video[0].RequestFullScreen||video[0].webkitRequestFullScreen||video[0].mozRequestFullScreen;
+		//调用全屏方法
+		video[0].RequestFullScreen();
+		return false;
+	});
